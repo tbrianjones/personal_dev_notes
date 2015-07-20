@@ -1,0 +1,37 @@
+# custer name
+#
+# - name this based on the index
+# - eg. the "companies index" gets the cluster name "companies-cluster"
+#
+cluster.name: private-cortex-companies-cluster 
+
+# aws login credentials
+#
+cloud.aws.access_key: [[access-key]]
+cloud.aws.secret_key: [[secret-key]]
+
+# how does es discover other nodes in a cluster?
+#
+# - groups are aws ec2 security group names
+# - tags are aws ec2 tags ( key and value )
+#
+discovery.type: ec2
+discovery.ec2.groups: elasticsearch_node
+discovery.ec2.tag.index: private-cortex-companies
+
+# s3 gateway - indexes are stored in s3 for backup and recovery
+#
+gateway.type: s3
+gateway.s3.bucket: elasticsearch-indexes
+
+# Set how many nodes are expected in this cluster. Once these N nodes
+# are up (and recover_after_nodes is met), begin recovery process immediately
+# (without waiting for recover_after_time to expire):
+#
+gateway.expected_nodes: 1
+
+# disable swapping to disk
+#
+# - set to 'true' to disable swapping
+#
+bootstrap.mlockall: true
