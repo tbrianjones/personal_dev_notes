@@ -8,6 +8,8 @@ References
 - how to setup chrooted sftp (really good): http://www.thegeekstuff.com/2012/03/chroot-sftp-setup/
   - prevents users from navicagting rooted file system
 - article on limiitng sftp access: http://www.cyberciti.biz/tips/howto-linux-shell-restricting-access.html
+- article on folder permissions in linux: http://unix.stackexchange.com/questions/18095/in-linux-write-permission-is-equivalent-to-execute-for-directories
+  - another on the parent folders: http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory
 
 Setup
 -----
@@ -34,19 +36,20 @@ Setup
 ```
 
 - add users:
-  - `sudo useradd -g sftpusers -d / -s /sbin/nologin userName`
+  - sudo `useradd -g sftpusers -d / -s /sbin/nologin userName`
     - `-g sftpusers` is the group the user is part of
     - `-d /` is the root directory (relative to the user's root directory)
     `-s /sbin/nologin` prevents root access to filesystem
 - set passwords: `sudo passwd userName`
 - create user folders
-  - `sudo mkdir /sftp` (if not there yet)
+  - `sudo mkdir /sftp`
   - `sudo mkdir /sftp/userName/upload`
   - `sudo mkdir /sftp/userName/download`
-- set owner on these folders
-  - `sudo chown root:root /sftp/userName/`
-    - prevents writing to the user folder (/sftp/userName) if there are upload and download folders
+- set user/groups on these folders
+  - do not give access to the user folder (/sftp/userName) if there are upload and download folders
   - `sudo chown userName:sftpusers /sftp/userName/upload`
   - `sudo chown userName:sftpusers /sftp/userName/download`
-- set permissions for user folders
-  - 
+- set permissions on these folders
+  - `sudo chmod 0755 /sftp/userName/upload`
+  - `sudo chmod 0555 /sftp/userName/download`
+- restart sshd: `sudo service sshd restart`
