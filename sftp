@@ -1,0 +1,11 @@
+SFTP
+====
+
+References
+----------
+- how to setup sftp on centos: https://wiki.centos.org/HowTos/sftp
+- how to setup chrooted sftp: http://www.thegeekstuff.com/2012/03/chroot-sftp-setup/
+  - prevents users from navicagting rooted file system
+  
+Setup
+-----
