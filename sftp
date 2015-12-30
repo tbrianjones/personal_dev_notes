@@ -4,17 +4,46 @@ SFTP
 References
 ----------
 - unix.stackexchange.com: http://unix.stackexchange.com/questions/110593/how-can-i-create-an-sftp-user-in-centos
-- how to setup sftp on centos: https://wiki.centos.org/HowTos/sftp
-- how to setup chrooted sftp: http://www.thegeekstuff.com/2012/03/chroot-sftp-setup/
+- how to setup sftp on centos (not super helpful): https://wiki.centos.org/HowTos/sftp
+- how to setup chrooted sftp (really good): http://www.thegeekstuff.com/2012/03/chroot-sftp-setup/
   - prevents users from navicagting rooted file system
-  
+- article on limiitng sftp access: http://www.cyberciti.biz/tips/howto-linux-shell-restricting-access.html
+
 Setup
 -----
+
+### setup basic sftp
 - install open ssh: `sudo yum install openssh`
 - allow ssh (sftp) login with passwords and not just key files
   - `sudo vim /etc/ssh/sshd_config`
   - set `PasswordAuthentication no` to `PasswordAuthentication yes` 
 - restart sshd: `sudo service sshd restart`
-- add users
+- add users (don't add users yet)
   - `sudo useradd userX`
   - `sudo passwd userX`
+
+### limit user access (chrooted sftp)
+- add a group: `sudo groupadd sftpusers`
+- add users:
+  - sudo `useradd -g sftpusers -d / -s /sbin/nologin userName`
+    - `-g sftpusers` is the group the user is part of
+    - `-d /` is the root directory (relative to the user's root directory)
+    `-s /sbin/nologin` prevents root access to filesystem
+- set passwords: `sudo passwd userName`
+- add user group settings to the `/etc/ssh/sshd_config`
+
+```
+  # tail /etc/ssh/sshd_config
+  Match Group sftpusers
+        ChrootDirectory /sftp/%u
+        ForceCommand internal-sftp
+```
+
+- create user folders
+  - `sudo mkdir /sftp`
+  - `sudo mkdir /sftp/userName/upload`
+  - `sudo mkdir /sftp/userName/download`
+- set permissions on these folders
+  - do not give access to the user folder (/sftp/userName) if there are upload and download folders
+  - `sudo chown userName:sftpusers /sftp/userName/upload`
+  - `sudo chown userName:sftpusers /sftp/userName/download`
