@@ -13,7 +13,8 @@ Setup
 - install open ssh: `sudo yum install openssh`
 - allow ssh (sftp) login with passwords and not just key files
   - `sudo vim /etc/ssh/sshd_config`
-  - set `PasswordAuthentication no` to `PasswordAuthentication Yes` 
+  - set `PasswordAuthentication no` to `PasswordAuthentication yes` 
+- restart sshd: `sudo service sshd restart`
 - add users
   - `sudo useradd userX`
   - `sudo passwd userX`
