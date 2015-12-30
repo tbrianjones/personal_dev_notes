@@ -3,9 +3,17 @@ SFTP
 
 References
 ----------
+- unix.stackexchange.com: http://unix.stackexchange.com/questions/110593/how-can-i-create-an-sftp-user-in-centos
 - how to setup sftp on centos: https://wiki.centos.org/HowTos/sftp
 - how to setup chrooted sftp: http://www.thegeekstuff.com/2012/03/chroot-sftp-setup/
   - prevents users from navicagting rooted file system
   
 Setup
 -----
+- install open ssh: `sudo yum install openssh`
+- allow ssh (sftp) login with passwords and not just key files
+  - `sudo vim /etc/ssh/sshd_config`
+  - set `PasswordAuthentication no` to `PasswordAuthentication Yes` 
+- add users
+  - `sudo useradd userX`
+  - `sudo passwd userX`
