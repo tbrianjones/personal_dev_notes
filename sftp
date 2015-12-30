@@ -26,6 +26,10 @@ Setup
 
 ### limit user access (chrooted sftp)
 - add a group: `sudo groupadd sftpusers`
+- create sftp home folder
+  - `sudo mkdir /sftp`
+  - `sudo chown root:root /sftp`
+  - `sudo chmod 755 /sftp`
 - add user group settings to the `/etc/ssh/sshd_config`
 
 ```
@@ -35,21 +39,19 @@ Setup
         ForceCommand internal-sftp
 ```
 
-- add users:
+### Add a User
+- add user:
   - sudo `useradd -g sftpusers -d / -s /sbin/nologin userName`
     - `-g sftpusers` is the group the user is part of
     - `-d /` is the root directory (relative to the user's root directory)
     `-s /sbin/nologin` prevents root access to filesystem
-- set passwords: `sudo passwd userName`
-- create user folders
-  - `sudo mkdir /sftp`
-  - `sudo mkdir /sftp/userName/upload`
-  - `sudo mkdir /sftp/userName/download`
-- set user/groups on these folders
-  - do not give access to the user folder (/sftp/userName) if there are upload and download folders
-  - `sudo chown userName:sftpusers /sftp/userName/upload`
-  - `sudo chown userName:sftpusers /sftp/userName/download`
-- set permissions on these folders
-  - `sudo chmod 0755 /sftp/userName/upload`
-  - `sudo chmod 0555 /sftp/userName/download`
+- set password: `sudo passwd userName`
+- create user home folder
+  - `sudo mkdir -m 755 /sftp/userName`
+  - `sudo chown root:root /sftp/userName`
+- create user upload and download folders
+  - `sudo mkdir -m 755 /sftp/userName/upload`
+  - `sudo mkdir -m 755 /sftp/userName/download`
+  - `sudo chown userName:root /sftp/userName/upload`
+  - `sudo chown root:root /sftp/userName/download`
 - restart sshd: `sudo service sshd restart`
