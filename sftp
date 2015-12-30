@@ -41,7 +41,7 @@ Setup
 
 ### Add a User
 - add user:
-  - sudo `useradd -g sftpusers -d / -s /sbin/nologin userName`
+  - `sudo useradd -g sftpusers -d / -s /sbin/nologin userName`
     - `-g sftpusers` is the group the user is part of
     - `-d /` is the root directory (relative to the user's root directory)
     `-s /sbin/nologin` prevents root access to filesystem
