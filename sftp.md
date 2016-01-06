@@ -10,6 +10,7 @@ References
 - article on limiitng sftp access: http://www.cyberciti.biz/tips/howto-linux-shell-restricting-access.html
 - article on folder permissions in linux: http://unix.stackexchange.com/questions/18095/in-linux-write-permission-is-equivalent-to-execute-for-directories
   - another on the parent folders: http://unix.stackexchange.com/questions/13858/do-the-parent-directorys-permissions-matter-when-accessing-a-subdirectory
+- sftp chroot tut: https://wiki.archlinux.org/index.php/SFTP_chroot
 
 Setup
 -----
@@ -35,6 +36,9 @@ Setup
   Match Group sftpusers
         ChrootDirectory /sftp/%u
         ForceCommand internal-sftp
+        AllowTcpForwarding no
+        PermitTunnel no
+        X11Forwarding no
 ```
 
 ### Add a User
