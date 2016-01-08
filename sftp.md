@@ -62,6 +62,4 @@ Setup
 - add incoming SSH port 22 IP addresses for users so in the AWS console for whatever security group you are using for this server.
 
 ### Security
-- test server with nmap
-- `nmap -A -T4 -Pn -sV ip/domain`
-- good reference: http://www.cyberciti.biz/networking/nmap-command-examples-tutorials/
+- test server with [nmap](nmap.md)
