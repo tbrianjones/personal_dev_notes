@@ -61,5 +61,9 @@ Setup
 ### Whitelist IPs
 - add incoming SSH port 22 IP addresses for users so in the AWS console for whatever security group you are using for this server.
 
+### Logging
+- connections are tracked on AWS at /var/log/secure (ssh and sftp login attempts)
+- https://en.wikibooks.org/wiki/OpenSSH/Logging
+
 ### Security
 - test server with [nmap](nmap.md)
