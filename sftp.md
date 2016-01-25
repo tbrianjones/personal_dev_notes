@@ -50,13 +50,15 @@ Setup
 - set password: `sudo passwd userName`
 - create user home folder
   - `sudo mkdir -m 755 /sftp/userName`
-  - `sudo chown root:root /sftp/userName`
+  - usually already done by default: `sudo chown root:root /sftp/userName`
 - create user upload and download folders
   - `sudo mkdir -m 755 /sftp/userName/upload`
   - `sudo mkdir -m 755 /sftp/userName/download`
   - `sudo chown userName:root /sftp/userName/upload`
-  - `sudo chown root:root /sftp/userName/download`
-- restart sshd: `sudo service sshd restart`
+  - usually already done by default: `sudo chown root:root /sftp/userName/download`
+- restart sshd
+  - don't need to do when just adding a new user and their folders  
+  - `sudo service sshd restart`
 
 ### Whitelist IPs
 - add incoming SSH port 22 IP addresses for users so in the AWS console for whatever security group you are using for this server.
