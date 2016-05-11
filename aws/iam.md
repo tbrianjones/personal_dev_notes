@@ -6,6 +6,11 @@ AWS - IAM
   - good 3rd party article: https://blog.codeship.com/aws-iam-security/
   - cross account access: http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html
 
+### Polciies
+- policy elements: http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html
+- policy generator: https://awspolicygen.s3.amazonaws.com/policygen.html
+- policy tester: https://policysim.aws.amazon.com/home/index.jsp?#
+
 ### Root User
 - never user root user keys for apps
 - instead, create IAM users
