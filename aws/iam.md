@@ -13,6 +13,8 @@ AWS - IAM
 - tutorial: http://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html
 - overview: http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users 
 
+### S3 Access
+- tutorial: http://centroy.com/blog/allow-user-access-single-s3-bucket
 
 Old Notes
 =========
