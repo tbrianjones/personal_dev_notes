@@ -130,7 +130,6 @@ Setup Webmin
     - start: sudo /etc/webmin/start
     - stop: sudo /etc/webmin/stop
 
-
 Setup Apachetop
 ---------------
 *Apachetop is a benchmarking utility for apache*
@@ -143,13 +142,6 @@ Setup Apachetop
 - cd into the untarred folders ( eg. cd apachetop-0.12.6 )
 - sudo ./configure --with-logfile=/etc/httpd/logs/access_log
 - sudo make
-
-
-Install Subversion
-------------------
-*this is the version control software we used to use.  We stopped in October of 2012*
-- sudo yum install subversion*
-
 
 Setup Systems to load on boot
 -----------------------------
