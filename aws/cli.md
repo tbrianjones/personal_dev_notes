@@ -3,7 +3,8 @@ AWS CLI
 
 Install on OSX
 --------------
-http://www.cyberciti.biz/faq/osx-installing-the-aws-command-line-interface-using-brew/
+- use option two, here:
+  - http://www.cyberciti.biz/faq/osx-installing-the-aws-command-line-interface-using-brew/
 
 Tips & Tricks
 -------------
