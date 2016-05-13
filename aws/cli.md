@@ -1,6 +1,10 @@
 AWS CLI
 =======
 
+Install on OSX
+--------------
+http://www.cyberciti.biz/faq/osx-installing-the-aws-command-line-interface-using-brew/
+
 Tips & Tricks
 -------------
 - configure multiple accounts: http://www.tothenew.com/blog/using-multiple-iam-accounts-through-aws-cli-tool/
