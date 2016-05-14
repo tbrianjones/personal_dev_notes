@@ -6,7 +6,7 @@ AWS - IAM
   - good 3rd party article: https://blog.codeship.com/aws-iam-security/
   - cross account access: http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html
 
-### Polciies
+### Policies
 - policy elements: http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html
 - policy generator: https://awspolicygen.s3.amazonaws.com/policygen.html
 - policy tester: https://policysim.aws.amazon.com/home/index.jsp?#
@@ -22,6 +22,7 @@ AWS - IAM
 - aws example policies: http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html
 - aws rds policies: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html
 - 3rd party S3 tutorial: http://centroy.com/blog/allow-user-access-single-s3-bucket
+- assume rolls in other accounts: http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_permissions-to-switch.html
 
 Old Notes
 =========
