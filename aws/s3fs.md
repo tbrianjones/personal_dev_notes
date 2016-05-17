@@ -75,3 +75,10 @@ sudo make install
     - http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket#23946418
 
 S3FS should be installed and working. The folder works like any other mounted drive folder. It's only viewable via root unless you change permissions, which you should not if you're setting up an FTP server in front of this.
+
+### Alternate Ways to Launch S3FS
+- launch with IAM User credentials, rather than an IAM EC2 Role
+    - put credentials in a file `access_key:secret_access_key` > `/etc/psswd-s3fs`
+    - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
+- debug (append `-d -d -f -o f2 -o curldbg`)
+    - eg. `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
