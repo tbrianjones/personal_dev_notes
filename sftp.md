@@ -69,3 +69,7 @@ Setup
 
 ### Security
 - test server with [nmap](nmap.md)
+
+S3 backed SFTP
+--------------
+- see the other doc on [S3FS](./aws/s3fs.md)
