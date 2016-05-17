@@ -86,3 +86,8 @@ S3FS should be installed and working. The folder works like any other mounted dr
     - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
 - debug (append `-d -d -f -o f2 -o curldbg`)
     - eg. `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
+
+### References
+- http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket#23946418
+- https://github.com/s3fs-fuse/s3fs-fuse
+- https://cloudacademy.com/aws-certifications-training/
