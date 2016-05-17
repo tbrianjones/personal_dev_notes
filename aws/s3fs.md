@@ -53,7 +53,7 @@ Setup
 
 ### Install S3FS
 - install dependencies
-  - `sudo yum install -y gcc libstdc++-devel gcc-c++ fuse fuse-devel curl-devel libxml2-devel mailcap automake openssl-devel`
+  - `sudo yum install -y gcc libstdc++-devel gcc-c++ fuse fuse-devel curl-devel libxml2-devel mailcap automake openssl-devel git`
 - isntall and compile s3fs
 
 ```
@@ -66,7 +66,6 @@ sudo make install
 ```
 
 - make sure that last line is executed if you perform them all at once
-- might have to reboot instance (won't have access to s3fs until you reboot), and reconnect
 - create a folder to mount the s3 drive to `/some/folder`
 - launch s3fs
   - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
