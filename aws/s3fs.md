@@ -69,7 +69,7 @@ sudo make install
 - might have to reboot instance (won't have access to s3fs until you reboot), and reconnect
 - create a folder to mount the s3 drive to `/some/folder`
 - launch s3fs
-  - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
+  - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
   - s3fs won't be available with `sudo` (not sure how to enable this)
   - s3fs must be called directly with it's full filepath `/usr/local/bin/s3fs`
   - see this article for some settings in this command
@@ -83,7 +83,7 @@ S3FS should be installed and working. The folder works like any other mounted dr
 ### Alternate Ways to Launch S3FS
 - launch with IAM User credentials, rather than an IAM EC2 Role
     - put credentials in a file `access_key:secret_access_key` > `/etc/psswd-s3fs`
-    - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
+    - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
 - debug (append `-d -d -f -o f2 -o curldbg`)
     - eg. `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
 
