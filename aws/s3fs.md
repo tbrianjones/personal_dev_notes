@@ -69,8 +69,9 @@ sudo make install
 - make sure that last line is executed if you perform them all at once
 - create a folder to mount the s3 drive to `/some/folder`
 - launch s3fs
-  - `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
+  - `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name  -o umask=022 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
   - `-o` settings
+    -  `-o umask=022` - give propper permissions to bucket folders so sftp users can access them
     - `-0 allow_other` is a mounting parameter that gives access to the mounted folder in some way
     - http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket#23946418
 
