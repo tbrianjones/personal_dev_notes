@@ -77,6 +77,9 @@ sudo make install
 
 S3FS should be installed and working. The folder works like any other mounted drive folder. It's only viewable via root unless you change permissions, which you should not if you're setting up an FTP server in front of this.
 
+### Launch S3FS on boot/reboot
+- add the desired launch command to `/etc/rc.local` and save it. done.
+
 ### Alternate Ways to Launch S3FS
 - launch with IAM User credentials, rather than an IAM EC2 Role
     - put credentials in a file `access_key:secret_access_key` > `/etc/psswd-s3fs`
