@@ -1,7 +1,8 @@
 S3 File System (S3FS)
 =====================
-https://github.com/s3fs-fuse/s3fs-fuse
 S3FS is an S3 backed file system allowing you to mount an S3 bucket as a drive on an EC2 instance (or other linux instance).
+- github repo: https://github.com/s3fs-fuse/s3fs-fuse
+- github wiki: https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
 
 Setup
 -----
