@@ -4,8 +4,8 @@ S3FS is an S3 backed file system allowing you to mount an S3 bucket as a drive o
 - github repo: https://github.com/s3fs-fuse/s3fs-fuse
 - github wiki: https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
 
-Setup
------
+Setup on Amazon Linux
+---------------------
 
 ### Create S3 Bucket
 - create a bucket `bucket-name`
@@ -69,10 +69,9 @@ sudo make install
 - make sure that last line is executed if you perform them all at once
 - create a folder to mount the s3 drive to `/some/folder`
 - launch s3fs
-  - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
-  - s3fs won't be available with `sudo` (not sure how to enable this)
-  - s3fs must be called directly with it's full filepath `/usr/local/bin/s3fs`
-  - see this article for some settings in this command
+  - `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
+  - `-o` settings
+    - `-0 allow_other` is a mounting parameter that gives access to the mounted folder in some way
     - http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket#23946418
 
 S3FS should be installed and working. The folder works like any other mounted drive folder. It's only viewable via root unless you change permissions, which you should not if you're setting up an FTP server in front of this.
@@ -83,9 +82,9 @@ S3FS should be installed and working. The folder works like any other mounted dr
 ### Alternate Ways to Launch S3FS
 - launch with IAM User credentials, rather than an IAM EC2 Role
     - put credentials in a file `access_key:secret_access_key` > `/etc/psswd-s3fs`
-    - `sudo /usr/local/bin/s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
+    - `sudo s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
 - debug (append `-d -d -f -o f2 -o curldbg`)
-    - eg. `sudo /usr/local/bin/s3fs bucket-name /some/folder -o iam_role=iam_role_name -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
+    - eg. `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
 
 ### References
 - http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket#23946418
