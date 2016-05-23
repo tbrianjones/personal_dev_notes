@@ -46,6 +46,9 @@ make install
 ```
 ```
 
+### test it
+- https://ftptest.net/
+
 Operation
 ---------
 - change configurations
