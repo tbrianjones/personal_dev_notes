@@ -87,6 +87,9 @@ S3FS should be installed and working. The folder works like any other mounted dr
 - debug (append `-d -d -f -o f2 -o curldbg`)
     - eg. `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o umask=022 -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
 
+### Performance Metrics
+- 10mb/s (testing copying 300mb file to an S3 mounted folder)
+
 ### References
 - http://stackoverflow.com/questions/23939179/ftp-sftp-access-to-an-amazon-s3-bucket#23946418
 - https://github.com/s3fs-fuse/s3fs-fuse
