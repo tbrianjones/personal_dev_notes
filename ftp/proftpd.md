@@ -30,6 +30,22 @@ make install
 - `/var/log/proftpd`
 - `chmod proftpd:proftpd /var/log/proftpd`
 
+### proftpd.conf
+- used some notes from below
+  - general config notes: http://www.techrepublic.com/article/lock-it-down-set-up-a-secure-ftp-server-with-proftpd/
+  - sftp notes: http://xydmz.net/index.php/unix/sftp-only-server-with-proftpd-on-rhel5/
+
+### create ssl certs to allow for ftps
+- `sudo mkdir /etc/proftpd/ssl`
+- `openssl req -new -x509 -days 365 -nodes -out /etc/proftpd/ssl/proftpd.cert.pem -keyout /etc/proftpd/ssl/proftpd.key.pem`
+  - answer questions: most should be self explanatory
+  - when asked for Common Name, enter your domain name: eg. ftp.domain.com
+- `sudo chmod 600 /etc/proftpd/ssl/proftpd.*`
+
+**sample conf**
+```
+```
+
 Operation
 ---------
 - change configurations
