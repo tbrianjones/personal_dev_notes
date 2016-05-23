@@ -26,6 +26,10 @@ make install
   - example: `proftpd:x:498:498:Proftpd:/:/sbin/nologin`
   - this should match the `nouser` user
 
+### Create a log folder
+- `/var/log/proftpd`
+- `chmod proftpd:proftpd /var/log/proftpd`
+
 Operation
 ---------
 - change configurations
