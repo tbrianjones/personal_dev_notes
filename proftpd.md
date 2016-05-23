@@ -20,7 +20,7 @@ make install
 
 ### Create a user:group for ProFTPd
 - run this to create the user/group
-        - `useradd -r proftpd`
+        -- `useradd -r proftpd`
 - edit `/etc/passwd`
         - make sure user `proftpd` has no home directory and no login
         - example: `proftpd:x:498:498:Proftpd:/:/sbin/nologin`
