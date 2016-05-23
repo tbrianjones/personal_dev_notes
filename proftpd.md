@@ -17,3 +17,8 @@ Installation
 make
 make install
 ```
+
+Resources
+---------
+- secure setup of proftpd: http://www.techrepublic.com/article/lock-it-down-set-up-a-secure-ftp-server-with-proftpd/
+- setup ssl: http://notes.sagredo.eu/node/3
