@@ -32,6 +32,7 @@ make install
 
 ### proftpd.conf
 - used some notes from below
+  - config notes for proftpd on ec2: http://www.ajohnstone.com/achives/setting-up-an-ftp-server-with-proftpd-on-ec2-2/
   - general config notes: http://www.techrepublic.com/article/lock-it-down-set-up-a-secure-ftp-server-with-proftpd/
   - sftp notes: http://xydmz.net/index.php/unix/sftp-only-server-with-proftpd-on-rhel5/
 
@@ -63,5 +64,4 @@ Operation
 
 Resources
 ---------
-- secure setup of proftpd: http://www.techrepublic.com/article/lock-it-down-set-up-a-secure-ftp-server-with-proftpd/
 - setup ssl: http://notes.sagredo.eu/node/3
