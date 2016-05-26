@@ -56,6 +56,7 @@ Setup on Amazon Linux
 - install dependencies
   - `sudo yum install -y gcc libstdc++-devel gcc-c++ fuse fuse-devel curl-devel libxml2-devel mailcap automake openssl-devel git`
 - isntall and compile s3fs
+  - make sure that last line is executed if you perform them all at once
 
 ```
 git clone https://github.com/s3fs-fuse/s3fs-fuse
@@ -66,7 +67,9 @@ make
 sudo make install
 ```
 
-- make sure that last line is executed if you perform them all at once
+- create `/etc/fuse.conf`
+  - add a single line with this value: `user_allow_other`
+  - save and close (s3fs will have to be run as root to access this file)
 - create a folder to mount the s3 drive to `/some/folder`
 - launch s3fs
   - `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name -o umask=022 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
