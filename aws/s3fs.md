@@ -54,12 +54,12 @@ Setup on Amazon Linux
 
 ### Install S3FS
 - install dependencies
-  - `sudo yum install -y gcc libstdc++-devel gcc-c++ fuse fuse-devel curl-devel libxml2-devel mailcap automake openssl-devel git`
+  - `sudo yum install automake fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel`
 - isntall and compile s3fs
   - make sure that last line is executed if you perform them all at once
 
 ```
-git clone https://github.com/s3fs-fuse/s3fs-fuse
+git clone https://github.com/s3fs-fuse/s3fs-fuse.git
 cd s3fs-fuse/
 ./autogen.sh
 ./configure --prefix=/usr --with-openssl # See (*1)
