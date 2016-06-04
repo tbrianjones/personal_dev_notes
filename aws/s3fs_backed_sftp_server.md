@@ -17,7 +17,7 @@ Match Group sftpusers
   X11Forwarding no
 ```
 
-  - restart sshd: `sudo service sshd restart`
+- restart sshd: `sudo service sshd restart`
 
 Install S3FS
 ------------
