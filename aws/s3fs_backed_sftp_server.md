@@ -16,3 +16,8 @@ Match Group sftpusers
   PermitTunnel no
   X11Forwarding no
 ```
+
+  - restart sshd: `sudo service sshd restart`
+
+Install S3FS
+------------
