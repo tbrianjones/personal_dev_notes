@@ -7,6 +7,8 @@ Install S3FS
 - don't mount it yet
 - each user must have 
 
+
+
 Enable SFTP with OpenSSH
 ------------------------
 - allow ssh (sftp) login with passwords and not just key files
@@ -30,8 +32,8 @@ Create Group
 - `sudo groupadd ftpusers`
   - any group name is fine
 
-Create Users
-------------
+Create User
+-----------
 - `sudo useradd -g ftpusers -s /sbin/nologin userName`
   - home directory will default to `/home/userName`
 - create the user's home directory
