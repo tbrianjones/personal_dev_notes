@@ -4,6 +4,8 @@ S3FS Backed SFTP Server
 Install S3FS
 ------------
 - [my notes](/aws/s3fs.md)
+- don't mount it yet
+- each user must have 
 
 Enable SFTP with OpenSSH
 ------------------------
@@ -32,4 +34,11 @@ Create Users
 ------------
 - `sudo useradd -g ftpusers -s /sbin/nologin userName`
   - home directory will default to `/home/userName`
+- create the user's home directory
+  - `sudo mkdir /home/userName`
+  - default permissions and ownership are good (`drwxr-xr-x 2 root root`)
+- create a folder called `files` inside the user's home directory
+  - `sudo mkdir /home/userName/files/`
+  - this is where we'll mount their bucket "folder"
+  - permissions and ownership don't matter as they will be overwritten when we mount a bucket here
 - 
