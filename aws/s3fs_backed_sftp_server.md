@@ -1,6 +1,10 @@
 S3FS Backed SFTP Server
 =======================
 
+Install S3FS
+------------
+- [my notes](aws/s3fs.md)
+
 Enable SFTP with OpenSSH
 ------------------------
 - allow ssh (sftp) login with passwords and not just key files
@@ -19,5 +23,13 @@ Match Group sftpusers
 
 - restart sshd: `sudo service sshd restart`
 
-Install S3FS
+Create Group
 ------------
+- `sudo groupadd ftpusers`
+  - any group name is fine
+
+Create Users
+------------
+- `sudo useradd -g ftpusers -s /sbin/nologin userName`
+  - home directory will default to `/home/userName`
+- 
