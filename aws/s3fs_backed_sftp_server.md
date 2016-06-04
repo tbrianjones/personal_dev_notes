@@ -3,7 +3,7 @@ S3FS Backed SFTP Server
 
 Install S3FS
 ------------
-- [my notes](aws/s3fs.md)
+- [my notes](/aws/s3fs.md)
 
 Enable SFTP with OpenSSH
 ------------------------
