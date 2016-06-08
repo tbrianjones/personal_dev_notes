@@ -1,6 +1,11 @@
 MySQL
 =====
 
+Handy Queries
+-------------
+- simple dedup of a table
+	- `ALTER IGNORE TABLE table_name ADD UNIQUE (location_id, datetime)`
+	- source: http://stackoverflow.com/questions/2385921/deleting-duplicates-from-a-large-table
 
 Setup MySQL Server
 ------------------
