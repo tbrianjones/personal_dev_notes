@@ -7,6 +7,7 @@ Handy Queries
 	- `ALTER IGNORE TABLE table_name ADD UNIQUE (location_id, datetime)`
 	- source: http://stackoverflow.com/questions/2385921/deleting-duplicates-from-a-large-table
 	- transfer from R3.L to R3.L runs at 1GB/150sec
+	- "T" instances get throttled (IOPS, or MB/s or Network or something) (don't transfer large dbs with them)
 
 Setup MySQL Server
 ------------------
