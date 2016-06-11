@@ -13,3 +13,9 @@ RDS
 ```
 mysqldump -h old-db-host -u old-db-user -pold-db-pass old-db-name | mysql -h new-db-host -u new-db-user -pnew-db-pass new-db-name
 ```
+
+- Same thing, but for a specific table
+
+```
+mysqldump -h old-db-host -u old-db-user -pold-db-pass old-db-name TABLE_NAME | mysql -h new-db-host -u new-db-user -pnew-db-pass new-db-name
+```
