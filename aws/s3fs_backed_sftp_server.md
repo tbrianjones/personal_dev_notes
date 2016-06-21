@@ -4,10 +4,8 @@ S3FS Backed SFTP Server
 Install S3FS
 ------------
 - [my notes](/aws/s3fs.md)
-- don't mount it yet
-- each user must have 
-
-
+- don't mount any folders until later in this process
+- each SFTP user will have their own S3 home folder mounted inside their local home folder on the SFTP server
 
 Enable SFTP with OpenSSH
 ------------------------
@@ -43,4 +41,7 @@ Create User
   - `sudo mkdir /home/userName/files/`
   - this is where we'll mount their bucket "folder"
   - permissions and ownership don't matter as they will be overwritten when we mount a bucket here
-- 
+- mount the user's S3 home folder to the `files` folder inside their local `/home/` folder
+  - mount `s3://bucket/user/` to `/home/user/files/`
+  - `sudo s3fs nwd-ftp:/user/ /home/user/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
+  - `uid` must be the user's linux user id (use this: `cat /etc/passwd`)
