@@ -42,7 +42,7 @@ Create User
   - this is where we'll mount their bucket "folder"
   - permissions and ownership don't matter as they will be overwritten when we mount a bucket here
 
-### Mount the Bucket
+### Mount the User's Bucket-Folder
 - mount the user's S3 home folder to the `files` folder inside their local `/home/` folder
 - ie. mount `s3://sftpBucket/userName/` to `/home/userName/files/`
 - `uid`, below, must be the user's linux user id (use this: `cat /etc/passwd`)  
