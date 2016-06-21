@@ -42,9 +42,13 @@ Create User
   - this is where we'll mount their bucket "folder"
   - permissions and ownership don't matter as they will be overwritten when we mount a bucket here
 - mount the user's S3 home folder to the `files` folder inside their local `/home/` folder
+  - `uid` must be the user's linux user id (use this: `cat /etc/passwd`)  
   - mount `s3://sftpBucket/userName/` to `/home/userName/files/`
-  - `sudo s3fs sftpBucket:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
-  - `uid` must be the user's linux user id (use this: `cat /etc/passwd`)
+  - S3FS: `sudo s3fs sftpBucket:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
+  - add a device to `/etc/fstab`
+    - `nwd-ftp:/user/ /home/user/files/ fuse.s3fs _netdev,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
+    - use `mount -a` to load the new device from fstab once it's added
+  
 
 Mount on Boot/ReBoot
 --------------------
