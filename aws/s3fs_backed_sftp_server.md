@@ -42,8 +42,8 @@ Create User
   - this is where we'll mount their bucket "folder"
   - permissions and ownership don't matter as they will be overwritten when we mount a bucket here
 - mount the user's S3 home folder to the `files` folder inside their local `/home/` folder
-  - mount `s3://bucket/userName/` to `/home/userName/files/`
-  - `sudo s3fs nwd-ftp:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
+  - mount `s3://sftpBucket/userName/` to `/home/userName/files/`
+  - `sudo s3fs sftpBucket:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
   - `uid` must be the user's linux user id (use this: `cat /etc/passwd`)
 
 Mount on Boot/ReBoot
@@ -55,3 +55,14 @@ This can be done using rc.local or fstab (or various other methods)
 - fstab  
   - add each user's S3FS mount command to `/etc/ftab`
   - mount new drives using `mount -a` which will read fstab and mount any new devices
+
+Automating This Process
+-----------------------
+- this has not been attempted yet
+- setup cron to read all user folders in `S3://sftpBucket/`
+- when a new user is found, execute a shell script that:
+  - gens the new user
+  - creates a random password
+  - emails the password to the admin
+  - adds the S3FS mount command to the desired location
+  - mounts the new S3 user folder to their home folder
