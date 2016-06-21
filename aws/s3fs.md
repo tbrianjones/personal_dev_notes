@@ -84,6 +84,8 @@ S3FS should be installed and working. The folder works like any other mounted dr
 - add the desired launch command to `/etc/rc.local` and save it. done.
 
 ### Alternate Ways to Launch S3FS
+- launch using fstab
+    - fill in with notes once we get this setup
 - launch with IAM User credentials, rather than an IAM EC2 Role
     - put credentials in a file `access_key:secret_access_key` > `/etc/psswd-s3fs`
     - `sudo s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o allow_other -o umask=022 -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
