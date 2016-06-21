@@ -49,11 +49,10 @@ Create User
 - Use one of these methods
   - Using S3FS Command Directly from the command line:
     - `sudo s3fs sftpBucket:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
-  - addin a device to `/etc/fstab`:
-    - `nwd-ftp:/user/ /home/user/files/ fuse.s3fs _netdev,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
+  - add a device to `/etc/fstab`:
+    - `sftpBucket:/userName/ /home/userName/files/ fuse.s3fs _netdev,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
     - use `mount -a` to load the new device from fstab once it's added
   
-
 Mount on Boot/ReBoot
 --------------------
 This can be done using rc.local or fstab (or various other methods)
