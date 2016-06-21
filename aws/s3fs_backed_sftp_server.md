@@ -45,3 +45,13 @@ Create User
   - mount `s3://bucket/userName/` to `/home/userName/files/`
   - `sudo s3fs nwd-ftp:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
   - `uid` must be the user's linux user id (use this: `cat /etc/passwd`)
+
+Mount on Boot/ReBoot
+--------------------
+This can be done using rc.local or fstab (or various other methods)
+- rc.local
+  - add each user's S3FS mount command to `/etc/rc.local` (see example mount command above)
+  - run rc.local with `/etc/rc.local`
+- fstab  
+  - add each user's S3FS mount command to `/etc/ftab`
+  - mount new drives using `mount -a` which will read fstab and mount any new devices
