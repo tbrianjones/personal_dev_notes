@@ -54,7 +54,7 @@ Setup on Amazon Linux
 
 ### Install S3FS
 - install dependencies
-  - `sudo yum install automake fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel`
+  - `sudo yum install automake fuse fuse-devel gcc-c++ git libcurl-devel libxml2-devel make openssl-devel`
 - isntall and compile s3fs
   - make sure that last line is executed if you perform them all at once
 
