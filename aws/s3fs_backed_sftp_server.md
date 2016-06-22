@@ -34,8 +34,6 @@ Create User
 -----------
 - `sudo useradd -g ftpusers -s /sbin/nologin userName`
   - home directory will default to `/home/userName`
-- create the user's home directory
-  - `sudo mkdir /home/userName`
   - default permissions and ownership are good (`drwxr-xr-x 2 root root`)
 - create a folder called `files` inside the user's home directory
   - `sudo mkdir /home/userName/files/`
