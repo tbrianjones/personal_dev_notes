@@ -43,7 +43,7 @@ Create User
 - create a user password
   - `sudo passwd userName`
   - enter passwords as prompt
-  - 
+
 ### Mount the User's Bucket-Folder
 - mount the user's S3 home folder to the `files` folder inside their local `/home/` folder
 - ie. mount `s3://sftpBucket/userName/` to `/home/userName/files/`
