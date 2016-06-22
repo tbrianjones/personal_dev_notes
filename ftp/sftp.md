@@ -69,6 +69,7 @@ Setup
 - you can enable logging of SFTP commands by doing this
   - add `-l INFO` to this line of `/etc/sshd/sshd_config` - `Subsystem sftp  /usr/libexec/openssh/sftp-server`
   - eg. `Subsystem sftp  /usr/libexec/openssh/sftp-server -l INFO`
+  - restart sshd
 - Notes: https://en.wikibooks.org/wiki/OpenSSH/Logging
 
 ### Security
