@@ -17,7 +17,7 @@ Enable SFTP with OpenSSH
 ```
 Match Group sftpusers
   ChrootDirectory /sftp/%u
-  ForceCommand internal-sftp
+  ForceCommand internal-sftp -l INFO # -l INFO enables logging to /var/log/secure
   AllowTcpForwarding no
   PermitTunnel no
   X11Forwarding no
