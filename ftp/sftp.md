@@ -34,16 +34,17 @@ Setup
 ```
   # tail /etc/ssh/sshd_config
   Match Group sftpusers
-        ChrootDirectory /sftp/%u
-        ForceCommand internal-sftp
-        AllowTcpForwarding no
-        PermitTunnel no
-        X11Forwarding no
+    ChrootDirectory /sftp/%u
+    ForceCommand internal-sftp -l INFO # -l INFO enables logging to /var/log/secure
+    AllowTcpForwarding no
+    PermitTunnel no
+    X11Forwarding no
 ```
 
 ### Add a User
 - add user:
-  - `sudo useradd -g sftpusers -d / -s /sbin/nologin userName`
+  - `sudo useradd -g sftpusers -M -s /sbin/nologin userName`
+    - `-M` prevents a home folder from being created
     - `-g sftpusers` is the group the user is part of
     - `-d /` is the root directory (relative to the user's root directory)
     `-s /sbin/nologin` prevents root access to filesystem
@@ -66,17 +67,10 @@ Setup
 ### Logging
 - only SSH/SFTP connection details are tracked by default at 
 - log files are here by default: `/var/log/secure`
-- you can enable logging of SFTP commands by doing this
-  - add `-l INFO` to this line of `/etc/ssh/sshd_config` - `Subsystem sftp  /usr/libexec/openssh/sftp-server`
-  - eg. `Subsystem sftp  /usr/libexec/openssh/sftp-server -l INFO`
-  - give ability to write CHRooted user logs to `/var/log/secure`
-```
-    mkdir /sftp/userName/dev
-    chmod 700 /sftp/userName/dev
-    ln /dev/log /sftp/userName/dev/log
-```
-  - restart sshd
-- Notes: https://en.wikibooks.org/wiki/OpenSSH/Logging
+- enable logging of SFTP commands:
+  - this line that was already added to `/etc/ssh/sshd_config` will enable SFTP command logging
+  - `ForceCommand internal-sftp -l INFO # -l INFO`
+  - logs will be written to: `/var/log/secure`
 
 ### Security
 - test server with [nmap](nmap.md)
