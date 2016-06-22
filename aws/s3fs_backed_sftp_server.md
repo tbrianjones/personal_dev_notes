@@ -32,13 +32,14 @@ Create Group
 
 Create User
 -----------
-- `sudo useradd -g ftpusers -s /sbin/nologin userName`
-  - home directory will default to `/home/userName`
-  - change owner: `sudo chown root:root /home/userName/`
-  - change permissions: `sudo chmod 755 /home/userName/`
+- `sudo useradd -M -g ftpusers -s /sbin/nologin userName`
+  - -M prevents the home directory from creating (it's ownership and permissions will all be wrong anyway)
+- create home folder
+  - `sudo mkdir /home/userName`
+  - the default owner and permissions will be correct (root:root / 755)
 - create a folder called `files` inside the user's home directory
   - `sudo mkdir /home/userName/files/`
-  - this is where we'll mount their bucket "folder"
+  - this is where we'll mount the user's bucket "folder"
   - permissions and ownership don't matter on this folder as they will be overwritten when we mount a bucket here
 - create a user password
   - `sudo passwd userName`
