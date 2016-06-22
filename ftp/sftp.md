@@ -1,5 +1,5 @@
-SFTP
-====
+SFTP using OpenSSH
+==================
 
 References
 ----------
@@ -64,8 +64,12 @@ Setup
 - add incoming SSH port 22 IP addresses for users so in the AWS console for whatever security group you are using for this server.
 
 ### Logging
-- connections are tracked on AWS at /var/log/secure (ssh and sftp login attempts)
-- https://en.wikibooks.org/wiki/OpenSSH/Logging
+- only SSH/SFTP connection details are tracked by default at 
+- log files are here by default: `/var/log/secure`
+- you can enable logging of SFTP commands by doing this
+  - add `-l INFO` to this line of `/etc/sshd/sshd_config` - `Subsystem sftp  /usr/libexec/openssh/sftp-server`
+  - eg. `Subsystem sftp  /usr/libexec/openssh/sftp-server -l INFO`
+- Notes: https://en.wikibooks.org/wiki/OpenSSH/Logging
 
 ### Security
 - test server with [nmap](nmap.md)
