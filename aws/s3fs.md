@@ -72,7 +72,7 @@ sudo make install
   - save and close (s3fs will have to be run as root to access this file)
 - create a folder to mount the s3 drive to `/some/folder`
 - launch s3fs
-  - `sudo s3fs sftpBucket:/ /some/folder/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022`
+  - `sudo s3fs sftpBucket:/ /some/folder/ -o url=https://s3.amazonaws.com -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022`
   - `-o` settings
     - `-o umask=022`: give propper permissions to bucket folders so sftp users can access them
     - `-0 allow_other`: is a mounting parameter that gives access to the mounted folder in some way
@@ -85,7 +85,7 @@ S3FS should be installed and working. The folder works like any other mounted dr
 
 ### Alternate Ways to Launch S3FS
 - launch using fstab
-    - `sftpBucket:/userName/ /home/userName/files/ fuse.s3fs _netdev,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
+    - `sftpBucket:/userName/ /home/userName/files/ fuse.s3fs _netdev,url=https://s3.amazonaws.com,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
 - launch with IAM User credentials, rather than an IAM EC2 Role
     - put credentials in a file `access_key:secret_access_key` > `/etc/psswd-s3fs`
     - `sudo s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o allow_other -o umask=022 -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
