@@ -49,8 +49,8 @@ Create User
   - `s3://sftpBucket/userName/`
 - mount the user's S3 home folder to the `files` folder inside their local `/home/` folder
 - ie. mount `s3://sftpBucket/userName/` to `/home/userName/files/`
-- `uid`, below, must be the user's linux user id (use this: `cat /etc/passwd`)  
-- Use one of these methods
+  
+- Use one of these methods (`uid`, below, must be the user's linux user id (use this: `cat /etc/passwd`))
   - Using S3FS Command Directly from the command line:
     - `sudo s3fs sftpBucket:/userName/ /home/userName/files/ -o iam_role=ftp-server -o endpoint=us-west-2 -o allow_other -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -o umask=022 -o uid=501`
   - add a device to `/etc/fstab`:
