@@ -56,6 +56,7 @@ Create User
   - add a device to `/etc/fstab`:
     - `sftpBucket:/userName/ /home/userName/files/ fuse.s3fs _netdev,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
     - use `mount -a` to load the new device from fstab once it's added
+    - This error is ok if the listed bucket is already mounted: `s3fs: MOUNTPOINT directory /home/intelldata/files is not empty`
   
 Mount on Boot/ReBoot
 --------------------
