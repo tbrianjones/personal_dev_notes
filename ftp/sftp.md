@@ -69,6 +69,12 @@ Setup
 - you can enable logging of SFTP commands by doing this
   - add `-l INFO` to this line of `/etc/ssh/sshd_config` - `Subsystem sftp  /usr/libexec/openssh/sftp-server`
   - eg. `Subsystem sftp  /usr/libexec/openssh/sftp-server -l INFO`
+  - give ability to write CHRooted user logs to `/var/log/secure`
+```
+    mkdir /sftp/userName/dev
+    chmod 700 /sftp/userName/dev
+    ln /dev/log /sftp/userName/dev/log
+```
   - restart sshd
 - Notes: https://en.wikibooks.org/wiki/OpenSSH/Logging
 
