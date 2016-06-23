@@ -19,6 +19,10 @@ logpath  = /var/log/secure
 maxretry = 5
 ```
 
+### Start on Boot/ReBoot
+- update `/etc/rc.local` to start fail2ban
+  - add this line: `service fail2ban`
+
 UnBan IP
 --------
 - `fail2ban-client set JAIL_NAME unbanip 1.2.3.4`
