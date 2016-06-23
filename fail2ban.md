@@ -14,7 +14,7 @@ Install
 enabled  = true
 filter   = sshd
 action   = iptables[name=SSH, port=ssh, protocol=tcp]
-           sendmail-whois[name=SSH, dest=tbrianjones@gmail.com, sender=fail2ban@example.com]
+           sendmail-whois[name=SSH, dest=youremail@domain.com, sender=fail2ban@example.com]
 logpath  = /var/log/secure
 maxretry = 5
 ```
