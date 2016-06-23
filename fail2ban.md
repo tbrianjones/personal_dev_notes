@@ -1,8 +1,10 @@
 Fail2Ban
 ========
 
-Install
+Setup
 -------
+
+### Install
 - Good Notes: https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-centos-6
 - Install wit habove tutorial and no defaults need to be changed
 - If you wan to get emails when Fail2Ban does stuff (starts, stops, bans ips, etc.)
