@@ -23,7 +23,7 @@ maxretry = 5
 
 ### Start on Boot/ReBoot
 - update `/etc/rc.local` to start fail2ban
-  - add this line: `service fail2ban`
+  - add this line: `service fail2ban start`
 
 UnBan IP
 --------
