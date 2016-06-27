@@ -25,6 +25,9 @@ maxretry = 5
 - update `/etc/rc.local` to start fail2ban
   - add this line: `service fail2ban start`
 
+### Permanently Ban Repeat Offenders
+- http://stuffphilwrites.com/2013/03/permanently-ban-repeat-offenders-fail2ban/
+
 UnBan IP
 --------
 - `fail2ban-client set JAIL_NAME unbanip 1.2.3.4`
