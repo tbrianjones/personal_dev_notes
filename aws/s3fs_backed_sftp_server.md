@@ -76,6 +76,6 @@ Automating This Process
 - when a new user is found, execute a shell script that:
   - gens the new user
   - creates a random password
-  - emails the password to the admin
-  - adds the S3FS mount command to the desired location
-  - mounts the new S3 user folder to their home folder
+  - puts password (and any other credentials) in the s3 user folder
+  - adds the S3FS mount command to the desired location (I prefer `/etc/fstab`)
+  - mounts the new S3 user folder to their home folder (I prefer `mount -a` which draws from `/etc/fstab`)
