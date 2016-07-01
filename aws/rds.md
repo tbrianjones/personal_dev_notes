@@ -3,6 +3,7 @@ RDS
 
 ### Load a CSV to RDS
 - use `LOAD DATA INFILE` - example below
+- column names should be the names of columns in the mysql table you're importing into, but they should be in order of how the data is layed out in the CSV file.
 
 ```
 mysql -u root -p -h aws-rds-host db_name --local-infile=1 -e "
