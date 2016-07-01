@@ -19,6 +19,7 @@ lines terminated by '\n'
 - https://aws.amazon.com/blogs/aws/amazon-rds-update-cross-account-snapshot-sharing/
 
 ### Copying a DB from one RDS to another
+- THIS IS VERY SLOW AND MANY TABLES WILL FAIL (consider only using this for samll or simple tables)
 - run this on an EC2 instance that has access to both RD instances
 - this uses no drive space on the EC2 instance
 - you have to create new-db-name on the new rds instance before triggering this
