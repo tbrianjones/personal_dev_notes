@@ -16,10 +16,10 @@ Data Processing
   - 100P to go to the line containing 100th byte
 
 ### Merge Text Files with Headers
-- BUGS ... THE MERGED FILES WILL NOT HAVE A NEW LINE IN BETWEEN THEM (since the last line usually won't have a new line character)
 - Write header to `final_file`
   - `head -n 1 file_with_header > final_file`
 - Append data from other files (skipping the header in them)
+  - add a new line if you have to: `echo "" >> final_file` (you have to test this and can't rely on new line characters in editors)
   - `tail -n +2 file_to_append >> final_file`
 - Notes:
   - `head -n 1` grabs the first line of a file
