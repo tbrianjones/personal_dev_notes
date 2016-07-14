@@ -14,3 +14,13 @@ Data Processing
   - 100g to go to the 100th line
   - 50p to go 50% into the file
   - 100P to go to the line containing 100th byte
+
+### Merge Text Files with Headers
+- Write header to `final_file`
+  - `head -n 1 file_with_header > final_file`
+- Append data from other files (skipping the header in them)
+  - `tail -n +2 file_to_append >> final_file`
+- Notes:
+  - `head -n 1` grabs the first line of a file
+  - `tail -n +2` grabs the second line and every line after it
+  - `>` overwrites the final_file and `>>` appends to it
