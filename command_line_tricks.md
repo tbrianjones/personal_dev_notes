@@ -24,3 +24,6 @@ Data Processing
   - `head -n 1` grabs the first line of a file
   - `tail -n +2` grabs the second line and every line after it
   - `>` overwrites the final_file and `>>` appends to it
+- Process Times
+  - it took 10min to write a 30GB file to a final_file on EC2/EBS
+  - this file had 65M rows and was a csv with ~150 sparsly populates columns
