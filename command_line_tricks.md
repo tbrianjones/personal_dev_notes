@@ -14,6 +14,7 @@ Data Processing
   - 100g to go to the 100th line
   - 50p to go 50% into the file
   - 100P to go to the line containing 100th byte
+- more cool options: http://stackoverflow.com/questions/8586648/going-to-a-specific-line-number-using-less-in-unix
 
 ### Merge Text Files with Headers
 - Write header to `final_file`
