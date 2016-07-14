@@ -16,6 +16,7 @@ Data Processing
   - 100P to go to the line containing 100th byte
 
 ### Merge Text Files with Headers
+- BUGS ... THE MERGED FILES WILL NOT HAVE A NEW LINE IN BETWEEN THEM (since the last line usually won't have a new line character)
 - Write header to `final_file`
   - `head -n 1 file_with_header > final_file`
 - Append data from other files (skipping the header in them)
