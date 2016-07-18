@@ -32,6 +32,8 @@ Data Processing
 
 ### Delete all lines after match (including matched line)
 - `sed -n '/text to match. pipes are ok in here./q;p' file_to_match_in > file_to_write_to`
+- this rewrites the entire file to a new file (requiring the full file size in disk space)
 
 ### Remove new line from end of file
 - `perl -pi -e 'chomp if eof' file_to_remove_new_line_from`
+- this rewrites the entire file in place (overwrites existing file, and uses full file of disk space)
