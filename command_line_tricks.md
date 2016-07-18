@@ -29,3 +29,6 @@ Data Processing
 - Process Times
   - it took 10min to write a 30GB file to a final_file on EC2/EBS
   - this file had 65M rows and was a csv with ~150 sparsly populates columns
+
+### Delete all lines after match (including matched line)
+- `sed -n '/text to match. pipes are ok in here./q;p' file_to_match_in > file_to_write_to`
