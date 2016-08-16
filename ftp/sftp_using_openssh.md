@@ -18,9 +18,8 @@ Setup
 ### setup basic sftp
 - install open ssh: `sudo yum install openssh`
 - allow ssh (sftp) login with passwords and not just key files
-  - `sudo vim /etc/ssh/sshd_config`
-  - set `PasswordAuthentication no` to `PasswordAuthentication yes` 
-- restart sshd: `sudo service sshd restart`
+  - DO NOT DO THIS HERE
+  - it's done in the `Match Group sftpusers` directive below
 - do not add users until the final step below
 
 ### limit user access (chrooted sftp)
@@ -34,6 +33,7 @@ Setup
 ```
   # tail /etc/ssh/sshd_config
   Match Group sftpusers
+    PasswordAuthentication yes
     ChrootDirectory /sftp/%u
     ForceCommand internal-sftp -l INFO # -l INFO enables logging to /var/log/secure
     AllowTcpForwarding no
@@ -71,6 +71,7 @@ Setup
   - this line that was already added to `/etc/ssh/sshd_config` will enable SFTP command logging
   - `ForceCommand internal-sftp -l INFO # -l INFO`
   - logs will be written to: `/var/log/secure`
+  - DO NOT put this outside the `Match Group sftpusers` directive or you will lock out ALL SSH connections, including ec2-user via pem key
 
 ### Security
 - test server with [nmap](nmap.md)
