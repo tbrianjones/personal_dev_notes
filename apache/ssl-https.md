@@ -1,4 +1,8 @@
-*INSTALL SSL/HTTPS ON EC2*
+HTTPS / SSL on AWS EC2
+======================
+
+### Setup
+
 - Install SSL via Step 1 in the AWS tutorial below
   - This is all you need ot do to secure the connection over https if you don't need a verified connection with a little green lock in the browser. Customers won't trust this though.
 - Gen A CSR to paste into your SSL Cert Provider (I usually use GoDaddy)
