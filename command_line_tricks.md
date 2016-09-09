@@ -1,6 +1,11 @@
 Command Line Tricks
 ===================
 
+Process IDs
+-----------
+- see all process ids: `ps -ef`
+- get a specific pid: `pidof process_name_from_ps_dash_ef`
+
 Data Processing
 ---------------
 
