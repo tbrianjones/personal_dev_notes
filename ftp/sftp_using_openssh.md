@@ -61,6 +61,16 @@ Setup
   - don't need to do when just adding a new user and their folders  
   - `sudo service sshd restart`
 
+```
+QUICK ADD (run in one command)
+sudo useradd -g sftpusers -M -s /sbin/nologin userName
+sudo mkdir -m 755 /sftp/userName
+sudo mkdir -m 755 /sftp/userName/upload
+sudo mkdir -m 755 /sftp/userName/download
+sudo chown userName:root /sftp/userName/upload
+sudo passwd userName
+```
+
 ### Whitelist IPs
 - add incoming SSH port 22 IP addresses for users so in the AWS console for whatever security group you are using for this server.
 
