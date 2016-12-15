@@ -47,10 +47,10 @@ Create User
 
 ### Single CLI Command
 ```
-sudo useradd -M -g ftpusers -s /sbin/nologin sheehan
-sudo mkdir /home/sheehan
-sudo mkdir /home/sheehan/files/
-sudo passwd sheehan
+sudo useradd -M -g ftpusers -s /sbin/nologin userName
+sudo mkdir /home/userName
+sudo mkdir /home/userName/files/
+sudo passwd userName
 
 ```
 
