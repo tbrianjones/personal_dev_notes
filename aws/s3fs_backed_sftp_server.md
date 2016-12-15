@@ -45,6 +45,15 @@ Create User
   - `sudo passwd userName`
   - enter passwords as prompt
 
+### Single CLI Command
+```
+sudo useradd -M -g ftpusers -s /sbin/nologin sheehan
+sudo mkdir /home/sheehan
+sudo mkdir /home/sheehan/files/
+sudo passwd sheehan
+
+```
+
 ### Mount the User's Bucket-Folder
 - create user folder in s3
   - `s3://sftpBucket/userName/`
