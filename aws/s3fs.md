@@ -88,6 +88,7 @@ S3FS should be installed and working. The folder works like any other mounted dr
     - `sftpBucket:/userName/ /home/userName/files/ fuse.s3fs _netdev,url=https://s3.amazonaws.com,iam_role=ftp-server,endpoint=us-west-2,allow_other,stat_cache_expire=10,enable_noobj_cache,enable_content_md5,umask=022,uid=501 0 0`
 - launch with IAM User credentials, rather than an IAM EC2 Role
     - put credentials in a file `access_key:secret_access_key` > `/etc/passwd-s3fs`
+    - set permissions for the password file: `sudo chmod 640 /etc/passwd-s3fs`
     - `sudo s3fs bucket-name /some/folder -o passwd_file=/etc/passwd-s3fs -o allow_other -o umask=022 -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5`
 - debug (append `-d -d -f -o f2 -o curldbg`)
     - eg. `sudo s3fs bucket-name /some/folder -o iam_role=iam_role_name -o allow_other -o umask=022 -o stat_cache_expire=10 -o enable_noobj_cache -o enable_content_md5 -d -d -f -o f2 -o curldbg`
