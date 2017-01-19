@@ -2,7 +2,7 @@ RDS
 ===
 
 ### Load a CSV to RDS
-- use `LOAD DATA INFILE` - example below
+- use `LOAD DATA LOCAL INFILE` - example below
 - column names should be the names of columns in the mysql table you're importing into, but they should be in order of how the data is layed out in the CSV file.
 - This should be fast, eg. 3gb CSV loaded in 10min when the table doesn't have indexes
   - adding indexes after is WAY faster
@@ -15,6 +15,7 @@ enclosed by ''
 lines terminated by '\n'
 (mysql,column,names);"
 ```
+- If loading a csv/txt file with only a single column (like emails, or ids, or domains), you just need to create a table with a single column. Headers and other details don't matter. 16M rows imports in less than a minute.
 
 ### sharing snapshot between accounts
 - from console, 'manage snopshot permissions' and enter account id to share with
