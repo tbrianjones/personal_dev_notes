@@ -1,6 +1,10 @@
 AWS CLI
 =======
 
+Configure Users at the Command Line (multiple users too)
+--------------------------------------------------------
+- http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
+
 Install on OSX
 --------------
 - use option two, here:
