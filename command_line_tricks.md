@@ -43,3 +43,6 @@ Data Processing
 - `perl -pi -e 'chomp if eof' file_to_remove_new_line_from`
 - this rewrites the entire file in place (overwrites existing file, and uses full file of disk space)
 - SO: http://stackoverflow.com/questions/1654021/how-can-i-delete-a-newline-if-it-is-the-last-character-in-a-file
+
+### find replace psv to csv
+- `sed -i -e 's/|/,/g' alc_sample.csv`
