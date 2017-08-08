@@ -6,8 +6,7 @@ Exceptions
 - https://docs.python.org/3/library/exceptions.html#exception-hierarchy
 
 ### Common Exceptions
-- AssertionError: qualifying tests in the code that fail, meaning something is wrong!
-- AttributeError: Value of var has not been set, or the var does not exist
+- AssertionError: qualifying tests in the code that fail, meaning something is wrong
 - IndexError: Raised when a sequence subscript is out of range. (Slice indices are silently truncated to fall in the allowed range; if an index is not an integer, TypeError is raised.)
 - KeyError: Raised when a mapping (dictionary) key is not found in the set of existing keys.
 - NameError: Raised when a local or global name is not found. This applies only to unqualified names. The associated value is an error message that includes the name that could not be found.
