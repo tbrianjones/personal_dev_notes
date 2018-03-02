@@ -1,6 +1,10 @@
 GIT and GitHub
 ==============
 
+Setup system to use SSH
+-----------------------
+- https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+- this eliminates need to login when connecting to github from cli
 
 setup, username, & password
 ---------------------------
