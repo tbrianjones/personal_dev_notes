@@ -5,6 +5,7 @@ Setup system to use SSH
 -----------------------
 - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 - this eliminates need to login when connecting to github from cli
+- do this on the ec2 instance, not the local desktop
 
 setup, username, & password
 ---------------------------
