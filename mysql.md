@@ -42,25 +42,4 @@ Profiling with MysqlTuner
 
 Amazon RDS
 ----------
-
-### Importing a CSV to an RDS Instance
-- use `LOAD DATA INFILE` - example below
-
-```
-mysql -u root -p -h aws-rds-host db_name --local-infile=1 -e "
-load data local infile 'file_name.csv' into table table_to_import_into
-fields terminated by ','
-enclosed by ''
-lines terminated by '\n'
-(mysql,column,names);"
-```
-
-- `mysqlimport` also works, but is a pain - see another example below that works sometimes
-	- csv must have a header row with column names if there are more columns in the table than in the csv
-	- `mysqlimport -v --local --compress --columns=id,company_id,url,tier --user=root --password --host=amazon.rds.host.address companies files.csv`
-  	- don't use `--fields-terminated-by=` as this caused problems
-  	- the last two parts of this are the database name and the file name
-    	- mysql will automatically use the file name ( stripped of extension ) as the database to import to
-	- some useful sites:
-  		- http://aws.amazon.com/articles/2933?_encoding=UTF8&jiveRedirect=1
-  - http://dev.mysql.com/doc/refman/5.0/en/mysqlimport.html
+- See RDS notes in the AWS folder.
