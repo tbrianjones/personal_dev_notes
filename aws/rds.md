@@ -3,7 +3,7 @@ RDS
 
 ### Export to CSV from RDS
 
-Wrapping Quotes
+WITH WRAPPING QUOTES
 ```
 mysql -u USER -p -h HOST DB_NAME --batch -e "
     MYSQL
@@ -13,7 +13,7 @@ mysql -u USER -p -h HOST DB_NAME --batch -e "
 ```
 
 
-NO Wrapping Quotes
+NO WRAPPING QUOTES
 ```
 mysql -u USER -p -h HOST DB_NAME --batch -e "
     MYSQL
