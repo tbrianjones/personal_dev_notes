@@ -36,7 +36,19 @@ enclosed by ''
 lines terminated by '\n'
 (mysql,column,names);"
 ```
+
 - If loading a csv/txt file with only a single column (like emails, or ids, or domains), you just need to create a table with a single column. Headers and other details don't matter. 16M rows imports in less than a minute.
+
+ALTERNATE METHOD (more difficult)
+- `mysqlimport` also works, but is a pain - see another example below that works sometimes
+	- csv must have a header row with column names if there are more columns in the table than in the csv
+	- `mysqlimport -v --local --compress --columns=id,company_id,url,tier --user=root --password --host=amazon.rds.host.address companies files.csv`
+  	- don't use `--fields-terminated-by=` as this caused problems
+  	- the last two parts of this are the database name and the file name
+    	- mysql will automatically use the file name ( stripped of extension ) as the database to import to
+	- some useful sites:
+  		- http://aws.amazon.com/articles/2933?_encoding=UTF8&jiveRedirect=1
+  - http://dev.mysql.com/doc/refman/5.0/en/mysqlimport.html
 
 ### sharing snapshot between accounts
 - from console, 'manage snopshot permissions' and enter account id to share with
