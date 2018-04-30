@@ -1,6 +1,27 @@
 RDS
 ===
 
+### Export to CSV from RDS
+
+Wrapping Quotes
+```
+mysql -u USER -p -h HOST DB_NAME --batch -e "
+    MYSQL
+    QUERY
+    CODE
+" | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > FILE_NAME
+```
+
+
+NO Wrapping Quotes
+```
+mysql -u USER -p -h HOST DB_NAME --batch -e "
+    MYSQL
+    QUERY
+    CODE
+" | sed 's/\t//g;s/^//;s/$//;s/\n//g' > FILE_NAME
+```
+
 ### Load a CSV to RDS
 - use `LOAD DATA LOCAL INFILE` - example below
 - column names should be the names of columns in the mysql table you're importing into, but they should be in order of how the data is layed out in the CSV file.
