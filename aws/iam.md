@@ -23,6 +23,7 @@ AWS - IAM
 - aws rds policies: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html
 - 3rd party S3 tutorial: http://centroy.com/blog/allow-user-access-single-s3-bucket
 - assume rolls in other accounts: http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_permissions-to-switch.html
+- allows console/api access to ec2 via username tags: https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/
 
 Old Notes
 =========
