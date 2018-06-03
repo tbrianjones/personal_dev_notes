@@ -10,17 +10,20 @@ Setup & Install
 ---------------
 
 ### install
+
 sudo yum install docker
 sudo service docker start
 sudo usermod -a -G docker ec2-user # add ec2-user to docker group so sudo is not needed
 
 ### start docker service
+
 sudo service docker start
 
 
 ### test install
 
-
+### Useful Tutorials
+- aws ecs and docker: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
 
 List Containers
 ---------------
