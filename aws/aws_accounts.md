@@ -20,7 +20,8 @@ These notes are for setting up a new account for a new project or new engineer t
 	  - create roll
 - create master account "admin" roll within the new account
 	- same as "watching" above, but select "AdministrationAccess" policy, instead of "ReadOnlyAccess"
-- create policies in master account to allow watching and adminning new account
+- create policies in master account to allow users to watch and admin new account
+	- root account or account with admin privies will not need this
 
 ```
 {
