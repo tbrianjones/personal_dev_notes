@@ -7,12 +7,13 @@ Setup EBS Volumes
 
 Resize the Ephemeral Drive ( root volume )
 -----------------------------------------
-- increase the size of the root volume when launching the instance
-	- drive sizes are limited by instance type
-- set drive to persist on termination of the instance
+- increase the drive size when launching or through the EBS console
+	- set drive to persist on termination of the instance
 - resize the root partition
-	- the partition will be 8GB at initial login, even though a larger drive has actually been attached.
-	- you must run `sudo resize2fs /dev/sda1` to resize the root partition once logged in ( this takes about 1min per 10gb )
+	- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
+	- usually this:
+		- `growpart /dev/xvda 1`
+		- `sudo resize2fs /dev/xvda1`
 
 
 Attach and Mount an new EBS volume
