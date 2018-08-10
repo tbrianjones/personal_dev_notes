@@ -23,7 +23,7 @@ Setup Webgrind
 *web based gui for xdebug*
 
 - download from - https://github.com/jokkedk/webgrind/archive/master.zip
-	- extract into the web directory
+	- extract into the web directory (/var/www/html/)
 	- make sure these lines are set in php.ini for xdebug ( webgrind will auto check the xdebug.profiler_output_dir for profiles )
 - create /tmp/xdebug
 	- give webserver ownership of /tmp/xdebug
