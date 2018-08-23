@@ -7,6 +7,14 @@ Setup system to use SSH
 - this eliminates need to login when connecting to github from cli
 - do this on the ec2 instance, not the local desktop
 
+Create Machine User for Automation
+----------------------------------
+- create a new github user. Suggested here:
+  - https://developer.github.com/v3/guides/managing-deploy-keys/#machine-users
+- add machine user as a member of organization
+- add machine user to a group with read access to desired repos
+- create ssh credentials on the server where machine user needs to operate
+
 setup, username, & password
 ---------------------------
 - initial setup
